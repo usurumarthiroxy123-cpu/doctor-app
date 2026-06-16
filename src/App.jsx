@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "./components/Navbar";
-import Section from "./components/Section";
+import Section from "./components/section";
 import Doctorcard from "./components/Doctorcard";
 import Addnewdoctor from "./components/Addnewdoctor";
 import "./components/styles.css";
