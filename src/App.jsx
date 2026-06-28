@@ -1,47 +1,30 @@
-import React, { useState } from "react";
-import Navbar from "./components/Navbar";
-import Section from "./components/section";
-import Doctorcard from "./components/Doctorcard";
-import Addnewdoctor from "./components/Addnewdoctor";
-import "./components/styles.css";
-
-function App() {
-  const [count, setCount] = useState(0);
-
-  const doctors = [
-    { name: "John", specialization: "Ear", gender: "Male" },
-    { name: "Shiva", specialization: "Heart", gender: "Male" },
-    { name: "Abhi", specialization: "Muscle", gender: "Male" },
-    { name: "Zedek", specialization: "Heart", gender: "Male" },
-    { name: "Ramya", specialization: "Eyes", gender: "Female" },
-    { name: "Keerthi", specialization: "Heart", gender: "Female" },
-    { name: "Rao", specialization: "Bones", gender: "Male" },
-  ];
-
+import Navbar from "./components/Navbar"
+import Section from "./components/section"
+import './components/styles.css'
+import Addnewdoctor from "./components/Addnewdoctor"
+import { Route, Routes } from "react-router-dom"
+import Doctordetails from "./components/Doctordetails"
+import { useState } from "react"
+import ProtectedRoute from "./components/ProtectedRoute"
+import useCounter from "./components/useCounter"
+import DoctorProvider from "./components/DoctorProvider"
+function App(){
+  const [islogin,setIslogin]=useState(false)
+  const {count,increment,decrement}=useCounter()
   return (
-    <div>
-      <h2>{count}</h2>
-      <button onClick={() => setCount(count + 1)}>Inc</button>
-
-      <Navbar />
-      <Section />
-
-      {/* ADD THIS */}
-      <Addnewdoctor />
-
-      <div className="doctorparent">
-        {doctors.map((doctor, index) => (
-          <Doctorcard
-            key={index}
-            name={doctor.name}
-            specialization={doctor.specialization}
-            gender={doctor.gender}
-            image={doctor.image}
-          />
-        ))}
-      </div>
-    </div>
-  );
+   <div>
+    <Navbar/>
+    {count}
+    <button onClick={increment}>inc</button>
+    <button onClick={decrement}>dec</button>
+    
+    <button onClick={()=>setIslogin(true)}>click to login</button>
+    <Routes>
+      <Route path='/' element={<Section/>}/>
+      <Route path='/add-doctor' element={<Protectedroute islogin={islogin}><DoctorProvider><Addnewdoctor/></DoctorProvider></Protectedroute>}/>
+      <Route path='/doctor/:id'element={<Doctordetails/>}/>
+    </Routes>
+   </div>
+  )
 }
-
-export default App;
+export default App
