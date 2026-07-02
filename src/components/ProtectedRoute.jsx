@@ -1,12 +1,9 @@
-import React from 'react'
+function ProtectedRoute({ islogin, children }) {
+  if (islogin) {
+    return children;
+  }
 
-function ProtectedRoute({user, children}) {
-    if (user){
-        return children
-    }
-  return (
-    <div>please login first</div>
-  )
+  return <div>Please login first</div>;
 }
 
-export default ProtectedRoute
+export default ProtectedRoute;
