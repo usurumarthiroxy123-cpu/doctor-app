@@ -182,3 +182,218 @@
     border-right-color: var(--border);
   }
 }
+/* Appointment Page */
+
+.appointment-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:50px 20px;
+    background:#f4f8fc;
+    min-height:80vh;
+}
+
+.appointment-card{
+    width:500px;
+    background:#fff;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+.appointment-card h2{
+    text-align:center;
+    color:#1976d2;
+    margin-bottom:20px;
+}
+
+.doctor-info{
+    background:#eef6ff;
+    border-left:5px solid #1976d2;
+    padding:15px;
+    border-radius:8px;
+    margin-bottom:20px;
+}
+
+.doctor-info h3{
+    margin:0;
+    color:#1976d2;
+}
+
+.doctor-info p{
+    margin-top:5px;
+    color:#555;
+}
+
+.appointment-card label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+.appointment-card input,
+.appointment-card select,
+.appointment-card textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:15px;
+    box-sizing:border-box;
+}
+
+.appointment-card textarea{
+    resize:none;
+    height:100px;
+}
+
+.book-btn{
+    width:100%;
+    margin-top:25px;
+    padding:14px;
+    background:#1976d2;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:17px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.book-btn:hover{
+    background:#125ea8;
+}
+/* =======================
+Appointment Booking
+======================= */
+
+.appointment-page{
+    min-height:100vh;
+    background:#eef5ff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px;
+}
+
+.appointment-card{
+    width:500px;
+    background:white;
+    border-radius:18px;
+    padding:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+
+.doctor-header{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    margin-bottom:25px;
+    border-bottom:1px solid #eee;
+    padding-bottom:20px;
+}
+
+.doctor-header img{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    background:#f3f7ff;
+    padding:10px;
+}
+
+.doctor-header h2{
+    margin:0;
+    color:#2563eb;
+}
+
+.doctor-header p{
+    margin-top:6px;
+    color:#666;
+}
+
+.appointment-card label{
+    display:block;
+    margin-top:18px;
+    margin-bottom:6px;
+    font-weight:600;
+}
+
+.appointment-card input,
+.appointment-card select,
+.appointment-card textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #d0d7e2;
+    border-radius:10px;
+    font-size:15px;
+    outline:none;
+    box-sizing:border-box;
+}
+
+.appointment-card input:focus,
+.appointment-card select:focus,
+.appointment-card textarea:focus{
+    border-color:#2563eb;
+}
+
+.appointment-card textarea{
+    height:110px;
+    resize:none;
+}
+
+.book-btn{
+    width:100%;
+    margin-top:25px;
+    padding:14px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.book-btn:hover{
+    background:#1d4ed8;
+}
+.auth-container{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#eef5ff;
+}
+
+.auth-card{
+  width:350px;
+  background:white;
+  padding:30px;
+  border-radius:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+  text-align:center;
+}
+
+.auth-card input{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border:1px solid #ccc;
+  border-radius:8px;
+}
+
+.auth-card button{
+  width:100%;
+  padding:12px;
+  background:#2563eb;
+  color:white;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+.auth-card button:hover{
+  background:#1d4ed8;
+}

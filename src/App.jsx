@@ -1,33 +1,31 @@
-import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
-
+import "./App.css";
 import Navbar from "./components/Navbar";
 import Section from "./components/section";
 import Addnewdoctor from "./components/Addnewdoctor";
 import Doctordetails from "./components/Doctordetails";
 import ProtectedRoute from "./components/ProtectedRoute";
 import DoctorProvider from "./components/DoctorProvider";
-
+import AppointmentForm from "./components/AppointmentForm";
+import Appointments from "./components/Appointments";
 import "./components/styles.css";
+import Login from "./components/Login";
+import Register from "./components/Register";
 
 function App() {
-  const [islogin, setIslogin] = useState(false);
-
   return (
     <div>
       <Navbar />
 
-      <button onClick={() => setIslogin(true)}>
-        Click to Login
-      </button>
-
       <Routes>
         <Route path="/" element={<Section />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
 
         <Route
           path="/add-doctor"
           element={
-            <ProtectedRoute islogin={islogin}>
+            <ProtectedRoute>
               <DoctorProvider>
                 <Addnewdoctor />
               </DoctorProvider>
@@ -35,10 +33,9 @@ function App() {
           }
         />
 
-        <Route
-          path="/doctor/:id"
-          element={<Doctordetails />}
-        />
+        <Route path="/book/:id" element={<AppointmentForm />} />
+        <Route path="/appointments" element={<Appointments />} />
+        <Route path="/doctor/:id" element={<Doctordetails />} />
       </Routes>
     </div>
   );

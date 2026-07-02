@@ -1,9 +1,9 @@
-function ProtectedRoute({ islogin, children }) {
-  if (islogin) {
-    return children;
-  }
+import { Navigate } from "react-router-dom";
 
-  return <div>Please login first</div>;
+function ProtectedRoute({ children }) {
+  const islogin = localStorage.getItem("islogin") === "true";
+
+  return islogin ? children : <Navigate to="/login" />;
 }
 
 export default ProtectedRoute;

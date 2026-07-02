@@ -1,13 +1,14 @@
-import { useState } from "react"
-import Home from "./Home"
-import axios from "axios"
+import { useContext, useState } from "react";
+import Home from "./Home";
+import axios from "axios";
+import { DoctorContext } from "./DoctorProvider";
 function Addnewdoctor() {
   const [name,setName]=useState('')
   const [age,setAge]=useState('')
   const [gender,setGender]=useState('')
   const [specialization,setSpecialization]=useState('')
   const [salary,setSalary]=useState('')
-
+const { setNewdoctor } = useContext(DoctorContext);
   // const [newdoctor,setNewdoctor]=useState(null)
 
  async function handlesubmit(e){

@@ -13,6 +13,7 @@ function Home() {
     let response=await axios.get('https://doc-back.onrender.com/doctors')
     
    setDoctors(response.data)
+   console.log(response.data);
   }
   
   useEffect(()=>{
